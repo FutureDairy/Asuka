@@ -1,0 +1,16 @@
+html {
+	background: url("../images/bg.jpg") no-repeat center top;
+	background-size: 1366px;
+}
+
+input {
+	height: 40px;
+}
+
+.main { 
+	position:absolute;
+	left: 790px;
+	top: 140px;
+	width: 400px;
+	height: 240px; 
+} 

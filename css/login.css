@@ -1,0 +1,167 @@
+@charset "utf-8";
+
+/* CSS Document */
+* {
+	margin: 0;
+	padding: 0
+}
+
+
+html {
+	background: url("../images/bg.jpg") no-repeat center top;
+	background-size: 1366px;
+}
+ 
+.errortips {
+	width: 240px;
+	padding: 10px 0px 10px 0px;
+	text-align: left;
+	font-size: 14px;
+	visibility: hidden;
+	color: #f11; 
+}
+
+body {
+	color: #333333;
+}
+
+li {
+	list-style: none;
+}
+
+input {
+	vertical-align: middle;
+}
+
+.blog_icon {
+	position: relative;
+	height: 100px;
+	width: 100%;
+	/* top: 10%; */
+	/* bottom: 90%; */
+	font-size: 100px;
+}
+
+.blog_icon font {
+	color: #F0D50B;
+}
+
+a:hover,a:active {
+	color: #f60;
+	text-decoration: underline;
+}
+
+.main {
+	position: relative;
+	top: 0px;
+	/* bottom:  5%; */
+	width: 100%;
+	height: 240px;
+}
+ 
+#login_wrap {
+    position: fixed;
+    top: 10%; 
+    left: 10%;
+    right: 10%; 
+}
+
+.login {
+	width: 300px;
+	position: relative;
+	top: 40px;
+	/* margin: auto; */
+	background: #fff url(../images/login_12.gif) repeat-x;
+	padding: 18px 32px;
+	display: block;
+	height: 250px;
+	/* overflow: hidden; */
+	border: 2px solid #fff;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+}
+
+.login_form {
+	width: 300px;
+	margin-left: 30px;
+	/* margin: auto; */
+}
+
+.login .top {
+	width: 260px;
+	height: 23px;
+	overflow: hidden;
+}
+
+.login .top .left {
+	width: 110px;
+	float: left;
+}
+
+.login .top .right {
+	width: 160px;
+	float: right;
+	text-align: right;
+	color: #7dbf0e;
+	line-height: 26px;
+}
+
+.login .form {
+	width: 313px;
+	height: auto;
+	overflow: hidden;
+}
+
+.login .form .user .text {
+	width: 56px;
+	font-size: 14px;
+	line-height: 27px;
+	float: left;
+}
+
+.login .user {
+	width: 313px;
+	padding-bottom: 15px;
+	height: 27px;
+}
+
+.login .input {
+	height: 35px;
+	width: 220px;
+	float: left;
+	border: 1px #aaa solid;
+	padding: 0 5px;
+	line-height: 25px;
+	background-color: #ffffe1;
+	font-size: 20px;
+	color: rgb(250, 0, 0);
+}
+
+.login .img {
+	width: 48px;
+	float: left;
+	padding-left: 20px;
+	padding-top: 4px;
+}
+
+.login .submit {
+	background: #22C563;
+}
+
+.login button {
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	font-weight: bold;
+	padding: 8px 30px;
+	text-align: center;
+	display: inline-block;
+	background-color: #FF4351;
+	color: white;
+	width: 110px;
+	float: left;
+	height: 35px;
+	margin-Top: 10px;
+	margin-right: 15px;
+	border: none;
+} 
