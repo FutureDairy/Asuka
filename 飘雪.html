@@ -47,11 +47,13 @@ input{
 </div> 
 
     <label style="font-size: 23pt">宽度：</label>
-    <input id='inputW' style="height: 50px;font-size: 23pt; text-align: center; margin-right: 20px" value="900" placeholder="输入宽度"
-    oninput="setWidth()"> 
+    <input id='inputW' style="height: 50px;font-size: 23pt; text-align: center; margin-right: 20px" value="900" placeholder="输入宽度" > 
 
     <label style="font-size: 23pt">高度：</label>
-    <input id='inputH' style="height: 50px; font-size: 23pt; text-align: center; " value="1100" placeholder="输入高度" oninput="setHeight()"> 
+    <input id='inputH' style="height: 50px; font-size: 23pt; text-align: center; " value="1100" placeholder="输入高度"  > 
+<br>
+<br>
+    <button style="height: 70px; width: 100%; margin: auto; font-size: 26pt" onclick="setWidth();setHeight()">确 定</button>
 
 <span id="width_caculator" hidden></span> 
 <script> 
