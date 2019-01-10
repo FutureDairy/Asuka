@@ -89,11 +89,18 @@ $("#inputH").bind("input propertychange change",function(event){input_resize(thi
 	
 
 	function setWidth(){
-		alert()
-		$('#canvas').attr('width', $('#inputW').val())
+		try{
+		$('#canvas').attr('width', $('#inputW').val());
+		}catch(e){
+			alert('错误：'+e.toString())
+		}
 	}
 	function setHeight(){
+		try{
 		$('#canvas').attr('height', $('#inputH').val())
+		}catch(e){
+			alert('错误：'+e.toString())
+		}
 	}
 	function prev(){
 		picInd--;
