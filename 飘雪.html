@@ -1,0 +1,103 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Document</title>  
+    <style type="text/css">  
+        canvas {  
+            border:2px dotted red;  
+            /*添加背景图片 */
+            background: url(d:/1.jpg) center no-repeat ;  
+            background-size: cover;
+        }img{
+    max-width: 2128px;
+    max-height: 2128px;
+    height:auto;
+    zoom:expression( function(e) {
+if(e.width>e.height) {if (e.width>128) { e.height = e.height*(128 /e.width); e.width=128; }}
+else {if (e.height>128) { e.width = e.width*(128 /e.height); e.height=128; }}
+e.style.zoom = '1';     }(this));
+         overflow:hidden; 
+}
+    </style> 
+</head>  
+<body style="align-content: center;  align-items: center; justify-content: center; text-align: center; " >  
+    <canvas id="canvas" width="900" height="1300"></canvas>
+<br/>
+
+    <button style="height: 70px; width: 270px;font-size: 23pt" onclick="prev()">上一张</button>
+ <input type="file" style=" padding:25px; " onchange="selectImage(this);"/> 
+    <button style="height: 70px; width: 270px;font-size: 23pt" onclick="next()">下一张</button>
+
+<br/>
+
+<script>
+	function prev(){
+		document.getElementById('canvas').style = 'background: url(http://imgsrc.baidu.com/forum/pic/item/923c8bd6277f9e2f06a0e3861230e924ba99f3da.jpg) center no-repeat; background-size: cover;';
+		
+	}
+	function next(){
+		document.getElementById('canvas').style = 'background: url(http://imgsrc.baidu.com/forum/pic/item/6d6881b1cb134954838f16ea5b4e9258d3094ae6.jpg) center no-repeat; background-size: cover;'; 
+	}
+    var image = '';
+    function selectImage(file) {
+        if (!file.files || !file.files[0]) {
+            return;
+        }
+        var reader = new FileReader();
+        reader.onload = function (evt) { 
+            document.getElementById('canvas').style = 'background: url('+evt.target.result+') center no-repeat; background-size: cover;';
+            //image = evt.target.result;
+        }
+       // reader.readAsDataURL(file.files[0]);
+    }
+</script>
+    <script type="text/javascript">  
+        var can = document.getElementById("canvas");  
+        var ctx = can.getContext("2d");  
+        //定义一个随机函数  
+        function random(min,max){  
+            return parseInt(Math.random()*(max-min)+min);  
+        }  
+        //创建一个动画类  
+        function AnimationClass(){  
+            //雪花出现的坐标  
+            this.x = random(0,can.width);//横坐标随机  
+            this.y = 0;//纵坐标为0  
+            this.radius = random(1,5);//雪花的半径随机  
+            this.color = "white";//颜色红色  
+            this.speed = random(1,6);//雪花降落的速度随机  
+            this.startAngle = 0;//起始角度  
+            this.endAngle = Math.PI*2;//终止角度  
+        }  
+        //给雪花动画类添加一个方法  
+        AnimationClass.prototype.draw = function(){  
+            ctx.save();//储存  
+            ctx.fillStyle = this.color;//填充颜色  
+            //绘制雪花  
+            ctx.beginPath();  
+            ctx.arc(this.x,this.y,this.radius,this.startAngle,this.endAngle);//画圆  
+            ctx.fill();  
+            ctx.restore();  
+            this.sport();//调用运动函数使雪花运动起来  
+        };  
+        //雪花运动原型方法  
+        AnimationClass.prototype.sport = function(){  
+            this.y += this.speed;//雪花y方向上的值累加  
+        };  
+        //创建一个雪花对象  
+        var dataArr =[];  
+        function show(){  
+            can.height = can.height;//清除画布内容  
+            var A = new AnimationClass();//创建一个雪花动画A  
+            dataArr.push(A);//将创建的雪花动画储存在数组dataArr中  
+            //调用创建的数组中雪花对象方法  
+            for (var i in dataArr){  
+                dataArr[i].draw();  
+            }  
+            requestAnimationFrame(show);//循环调用  
+        }  
+        show();  
+    </script>  
+</body>  
+</html>
