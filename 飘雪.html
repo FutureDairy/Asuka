@@ -28,7 +28,9 @@ input{
 }
    
     </style> 
-    <script type="text/javascript" src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/jquery/jquery-1.10.2.min_65682a2.js"></script>
+
+    <script type="text/javascript" src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/jquery/jquery-1.10.2.min_65682a2.js"> </script>
+
 </head>  
 <body align='center'  >  
 	<h1 style="font-size: 28pt">飘雪特效（可以上传你的图片哦~ 等虱淋gay佬除外）</h1>
@@ -57,6 +59,18 @@ input{
 
 <span id="width_caculator" hidden></span> 
 <script> 
+ 	
+/*获取到Url里面的参数*/
+//原文：https://blog.csdn.net/qq_41485414/article/details/79577879  
+(function ($) {
+  $.getUrlParam = function (name) {
+   var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+   var r = window.location.search.substr(1).match(reg);
+   if (r != null) return unescape(r[2]); return null;
+  }
+ })(jQuery);
+  
+ 
 // 原文：https://blog.csdn.net/lianzhang861/article/details/84306139  
     function input_resize(obj){
     $("#width_caculator").html(obj.value)
@@ -74,7 +88,7 @@ $("#inputH").bind("input propertychange change",function(event){input_resize(thi
 <br/>
 
 <script> 
-	var picInd = 0; 
+	var picInd = 0;
 	var pics = [];
 	pics.push('https://t1.picb.cc/uploads/2019/01/10/VtfDLR.jpg');
 	pics.push('https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1547124189&di=b161f0cacb7bb3bc0e720842933c54cc&src=http://i2.hdslb.com/bfs/archive/7bce692b2be6fe3801c78c4603b0807f020f53c1.jpg');
@@ -85,8 +99,12 @@ $("#inputH").bind("input propertychange change",function(event){input_resize(thi
 	pics.push('http://r.photo.store.qq.com/psb?/V12gWK6Y30CrcG/M5Fx60BDFSgUuMJ*Um9JsveGJGwW7r*cHhfd460pYdw!/r/dPIAAAAAAAAA');
 	pics.push('http://r.photo.store.qq.com/psb?/V12gWK6Y1faAfm/lBpiGsLT7pngarK1L*1JS2uUAuWZ1pifN71ea6zdSp0!/r/dD8BAAAAAAAA');
 	pics.push('http://r.photo.store.qq.com/psb?/V12gWK6Y1faAfm/dpUsfY*mrOycpgozrBBjNU0axnNOsKKdrskaenRhm2M!/r/dGkAAAAAAAAA');
-	
-	
+
+	if($.getUrlParam('dws')){
+		pics = []
+		pics.push('https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1547124189&di=b161f0cacb7bb3bc0e720842933c54cc&src=http://i2.hdslb.com/bfs/archive/7bce692b2be6fe3801c78c4603b0807f020f53c1.jpg');	
+		pics.push('http://b4.photo.store.qq.com/psb?/V13V8s2d4CiB1p/ukWPmAv2V4FtyFxN0ZG0RJDywy.lUp1P2yqsT9*LAVc!/b/dAQAAAAAAAAA&bo=gAJxBAAAAAAFF8M!&rf=viewer_4');
+	 }
 
 	function setWidth(){
 		try{
