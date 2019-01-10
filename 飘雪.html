@@ -36,14 +36,14 @@ input{
 <br/> 
 
 <div align="center" style="display: flex; margin: 15px ">
-    <button style="  margin-right: 10px;  margin-left: auto; height: 70px; width: 270px;font-size: 23pt" onclick="prev()">上一张</button>
+    <button style="  margin-right: 10px;  margin-left: auto; height: 70px; width: 250px;font-size: 26pt" onclick="prev()">上一张</button>
     
 <div align="center" style="margin-top:1px">
-    <label style="font-size: 22pt; color: red">↓↓↓ 点按钮替换图片</label> 
+    <label style="font-size: 32pt; color: red">↓↓↓ 点按钮替换图片</label> 
     <br>
  <input type="file" style=" padding:0px 20px; " onchange="selectImage(this);"/>  
  </div>
-    <button style=" margin-right: auto;  margin-left: 10px;height: 70px; width: 270px;font-size: 23pt" onclick="next()">下一张</button>
+    <button style=" margin-right: auto;  margin-left: 10px;height: 70px; width: 250px;font-size: 26pt" onclick="next()">下一张</button>
 </div> 
 
     <label style="font-size: 23pt">宽度：</label>
@@ -60,7 +60,7 @@ input{
     $("#width_caculator").html(obj.value)
     $("#width_caculator").css("fontSize", $(obj).css('fontSize'))
     var width= $("#width_caculator").css('width').replace('px', '');
-    var newW = parseInt(width)+233;
+    var newW = parseInt(width)+200;
     $(obj).css('width', newW) 
     } 
 $("#inputW").each(function(event){input_resize(this)});
@@ -86,6 +86,7 @@ $("#inputH").bind("input propertychange change",function(event){input_resize(thi
 	pics.push('http://r.photo.store.qq.com/psb?/V12gWK6Y1faAfm/dpUsfY*mrOycpgozrBBjNU0axnNOsKKdrskaenRhm2M!/r/dGkAAAAAAAAA');
 
 	function setWidth(){
+		alert()
 		$('#canvas').attr('width', $('#inputW').val())
 	}
 	function setHeight(){
