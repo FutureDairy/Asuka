@@ -32,26 +32,26 @@ input{
 </head>  
 <body align='center'  >  
 	<h1 style="font-size: 28pt">飘雪特效（可以上传你的图片哦~ 等虱淋gay佬除外）</h1>
-    <canvas id="canvas" width="900" height="1300"></canvas>
+    <canvas id="canvas" width="830" height="1100"></canvas>
 <br/> 
 
 <div align="center" style="display: flex; margin: 15px ">
-    <button style="  margin-right: 10px;  margin-left: auto; height: 70px; width: 250px;font-size: 26pt" onclick="prev()">上一张</button>
+    <button style="  margin-right: 10px;  margin-left: auto; height: 70px; width: 230px;font-size: 26pt" onclick="prev()">上一张</button>
     
 <div align="center" style="margin-top:1px">
-    <label style="font-size: 32pt; color: red">↓↓↓ 点按钮替换图片</label> 
+    <label style="font-size: 30pt; color: red">↓↓↓点击替换图片</label> 
     <br>
  <input type="file" style=" padding:0px 20px; " onchange="selectImage(this);"/>  
  </div>
-    <button style=" margin-right: auto;  margin-left: 10px;height: 70px; width: 250px;font-size: 26pt" onclick="next()">下一张</button>
+    <button style=" margin-right: auto;  margin-left: 10px;height: 70px; width: 230px;font-size: 26pt" onclick="next()">下一张</button>
 </div> 
 
     <label style="font-size: 23pt">宽度：</label>
-    <input id='inputW' style="height: 50px;font-size: 23pt; text-align: center; margin-right: 20px" value="900" placeholder="输入宽度"
-    onblur="setWidth()"> 
+    <input id='inputW' style="height: 50px;font-size: 23pt; text-align: center; margin-right: 20px" value="830" placeholder="输入宽度"
+    oninput="setWidth()"> 
 
     <label style="font-size: 23pt">高度：</label>
-    <input id='inputH' style="height: 50px; font-size: 23pt; text-align: center; " value="1300" placeholder="输入高度" onblur="setHeight()"> 
+    <input id='inputH' style="height: 50px; font-size: 23pt; text-align: center; " value="1100" placeholder="输入高度" oninput="setHeight()"> 
 
 <span id="width_caculator" hidden></span> 
 <script> 
@@ -60,7 +60,7 @@ input{
     $("#width_caculator").html(obj.value)
     $("#width_caculator").css("fontSize", $(obj).css('fontSize'))
     var width= $("#width_caculator").css('width').replace('px', '');
-    var newW = parseInt(width)+200;
+    var newW = parseInt(width)+195;
     $(obj).css('width', newW) 
     } 
 $("#inputW").each(function(event){input_resize(this)});
@@ -71,9 +71,7 @@ $("#inputH").bind("input propertychange change",function(event){input_resize(thi
 
 <br/>
 
-<script>
-	var picWidth = 900;
-	var picHeight = 1300;
+<script> 
 	var picInd = 0; 
 	var pics = [];
 	pics.push('https://t1.picb.cc/uploads/2019/01/10/VtfDLR.jpg');
